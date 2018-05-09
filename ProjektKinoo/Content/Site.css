@@ -1,12 +1,17 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    margin:0 auto;
+    width: 100%;
+    height:100%;
+    background: url('../Images/cinema_psd_by_mericg.jpg') 50% 0% black fixed no-repeat;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
+    padding-left: 30px;
     padding-right: 15px;
+    max-width:850px;
+    max-height:361px !important;
+    height:361px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +27,22 @@ select,
 textarea {
     max-width: 280px;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #dd945f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0275d8;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
