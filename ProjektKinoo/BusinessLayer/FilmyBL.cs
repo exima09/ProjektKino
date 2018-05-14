@@ -13,7 +13,7 @@ namespace ProjektKinoo.BusinessLayer
         public List<Filmy> PobierzFilmy()
         {
             DB mDB = new DB();
-            return mDB.FilmDB.ToList();
+            return mDB.FilmDB.OrderBy(x => x.GodzinaSeansu).ToList();
         }
 
         public void DodajFilm(Filmy u)

@@ -5,48 +5,19 @@
 }
 
 <h2>Repertuar</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Lista[0].Tytul)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lista[0].Opis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lista[0].Cena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lista[0].GodzinaSeansu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lista[0].DlugoscSeansu)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model.Lista) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tytul)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Opis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GodzinaSeansu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DlugoscSeansu)
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row mr-1">
+    @foreach (var item in Model.Lista)
+    {
+        <div class="col-4 mt-3">
+            <div class="card p-3" style="background: rgb(255,255,255,0.5);">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Tytul)</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Godzina: @Html.DisplayFor(modelItem => item.GodzinaSeansu)</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Cena: @Html.DisplayFor(modelItem => item.Cena) zł</h6>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Opis)</p>
+                    <p class="card-text">Długość filmu: @Html.DisplayFor(modelItem => item.DlugoscSeansu)</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
