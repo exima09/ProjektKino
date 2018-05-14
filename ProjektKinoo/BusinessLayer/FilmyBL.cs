@@ -42,5 +42,14 @@ namespace ProjektKinoo.BusinessLayer
             mDB.FilmDB.Remove(u);
             mDB.SaveChanges();
         }
+        public int SprawdzDostep(string em)
+        {
+            UzytkownicyBL UserBL = new UzytkownicyBL();
+            if(UserBL.PobierzRole(em)==1)
+            {
+                return 1;
+            }
+            return 0;
+        }
     }
 }

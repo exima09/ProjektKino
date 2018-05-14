@@ -33,7 +33,17 @@ namespace ProjektKinoo.Controllers
                 SHA512 shaM = new SHA512();
                 vm.User.PasswordHash = Convert.ToBase64String(shaM.ComputeHash(data));
                 UzytkownicyBL UserBL = new UzytkownicyBL();
-                UserBL.AddUser(vm.User);
+                try
+                {
+                    UserBL.GetUserEmail(vm.User.Email);
+                    ModelState.AddModelError("CredentialError", "Podany email jest zajęty!");
+                    return View();
+                }
+                catch
+                {
+                    UserBL.AddUser(vm.User);
+                }
+                
             }
             else
                 return View();
@@ -63,7 +73,7 @@ namespace ProjektKinoo.Controllers
                     return RedirectToAction("Index", "Home", null);
             }
             ModelState.AddModelError("CredentialError", "Niepoprawna nazwa użytkownika lub hasło");
-            return View("Email");
+            return View();
         }
         public ActionResult Wyloguj()
         {

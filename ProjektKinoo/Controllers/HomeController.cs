@@ -13,17 +13,25 @@ namespace ProjektKinoo.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult KinoDlaSzkoly()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult KinoNaTemat()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult NocnyMaraton()
+        {
+            return View();
+        }
+        public ActionResult Cennik()
+        {
+            return View();
+        }
+        public ActionResult BrakDostepu()
+        {
             return View();
         }
     }

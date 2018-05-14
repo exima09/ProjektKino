@@ -1,0 +1,52 @@
+﻿@model ProjektKinoo.ViewModels.Filmy.RepertuarVM
+
+@{
+    ViewBag.Title = "Repertuar";
+}
+
+<h2>Repertuar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Tytul)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].GodzinaSeansu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].DlugoscSeansu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Lista) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tytul)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodzinaSeansu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DlugoscSeansu)
+        </td>
+    </tr>
+}
+
+</table>

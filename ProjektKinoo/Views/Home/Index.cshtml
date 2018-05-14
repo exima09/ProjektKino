@@ -1,31 +1,56 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Strona Główna";
 }
-
-<div class="row">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-
+<div class="row mr-0 text-center">
+    <p><img src="~/Images/cinexima.png" width="50%"/></p>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <p class="lead">
+            Kino to poza standardowymi seansami filmowymi również:
 
+            specjalne, przedpremierowe pokazy filmów (z udziałem twórców),
+            maratony filmowe,
+            festiwale filmowe,
+            koncerty,
+            gry i zabawy dla dzieci,
+            konkursy,
+            seanse dla grup szkolnych i firm.
+        </p>
+        </div>
+    </div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <img class="rounded mx-auto d-block" src="~/Images/kinoDlaSzkoly.png" width="250"/>
+    </div>
+    <div class="col-md-4">
+        <img class="rounded mx-auto d-block" src="~/Images/kinoNaTemat.png" width="250"/>
+    </div>
+    <div class="col-md-4">
+        <img class="rounded mx-auto d-block" src="~/Images/maratonFilmowy.png" width="250"/>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-md-4">
+        <h2>Kino Dla Szkoły!</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Już od 1 września zapraszamy na kolejny rok szkolny 2017/2018 w kinach Helios. Nasze propozycje filmowe to nie tylko rozrywka, ale również program edukacyjny skierowany do uczniów i nauczycieli. W każdym kinie odbywają się cykliczne spotkania edukacyjne z filmem „Kino na Temat” – dla młodzieży oraz „Kino na Temat Junior” – dla dzieci.
+            @Html.ActionLink("Więcej »", "KinoDlaSzkoly", "Home", null, new { @class = "btn btn-default" })
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Kino Na Temat!</h2>
+        <p>
+            Witamy serdecznie uczestników projektu edukacyjnego Kino na Temat w roku szkolnym 2017/2018! Nowy rok szkolny to nowe wyzwania, także u nas - zapraszamy do zapoznania się z programem Kina na Temat na najbliższe miesiące.
+            @Html.ActionLink("Więcej »", "KinoNaTemat", "Home", null, new { @class = "btn btn-default" })
+        </p>
+        
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Nocny Maraton!</h2>
+        <p>
+            Nocne Maratony Filmowe to nie tylko okazja do "nieprzespanej" nocy i sale kinowe oddane do dyspozycji "nocnych marków". To przede wszystkim doskonały moment na przeżycie kilku godzin w niepowtarzalnym klimacie, jaki stworzyć potrafią filmy grane jeden za drugim.
+            @Html.ActionLink("Więcej »", "NocnyMaraton", "Home", null, new { @class = "btn btn-default" })
+        </p>
     </div>
 </div>

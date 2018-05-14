@@ -12,7 +12,7 @@
 @using (Html.BeginForm("Logowanie", "Logowanie", FormMethod.Post, new { @class = "form-signin col-lg-3 mr-auto text-center" }))
 {
 
-    <img class="col-sm-12" src="https://vignette.wikia.nocookie.net/logopedia/images/b/bf/Kino_CS_logo.png/revision/latest?cb=20100526163950" alt="" width="200" height="92">
+    <img class="col-sm-12" src="~/Images/cinexima.png" alt="" width="200">
     <h1 class="h3 font-weight-normal">Logowanie</h1>
     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Nazwa Użytkownika" } })
     @Html.PasswordFor(m => Model.Pass, new { @class = "form-control", @required = "required", @placeholder = "Hasło" })

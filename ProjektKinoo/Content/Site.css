@@ -46,3 +46,22 @@ textarea {
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+.c-pointer {
+    cursor:pointer;
+}
+.hr {
+    width: 95%;
+    margin: 0px;
+    margin-right: 30px;
+    border-top: 1px solid #0275d8;
+    height: 0.5px;
+}
+.admin-active a h2 {
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 1s ease-in-out;
+}
+.admin-active:hover {
+    background: rgba(0, 0, 0, 0.3) !important;
+    transition: all 1s ease-out;
+}

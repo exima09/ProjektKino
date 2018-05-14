@@ -16,13 +16,13 @@ namespace ProjektKinoo.Models
         [Required]
         public string Opis { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:#,##0.00#}", ApplyFormatInEditMode = true)]
         public double Cena { get; set; }
-        [Required]
         [Display(Name = "Godzina Seansu")]
-        [Range(0,24,ErrorMessage ="Somsiad pacz na zegar!")]
-        public int GodzinaSeansu { get; set; }
-        [Required]
+        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
+        public string GodzinaSeansu { get; set; }
         [Display(Name = "Długość Filmu")]
-        public int DlugoscSeansu { get; set; }
+        [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
+        public string DlugoscSeansu { get; set; }
     }
 }

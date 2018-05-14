@@ -48,5 +48,16 @@ namespace ProjektKinoo.BusinessLayer
             mDB.UserDB.Remove(u);
             mDB.SaveChanges();
         }
+        public int PobierzRole(string em)
+        {
+            Uzytkownicy User = GetUserEmail(em);
+            if(User.Admin==1)
+            {
+                return 1;
+            } else
+            {
+                return 0;
+            }
+        }
     }
 }

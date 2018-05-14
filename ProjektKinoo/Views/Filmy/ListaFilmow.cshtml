@@ -1,0 +1,77 @@
+﻿@model ProjektKinoo.ViewModels.Filmy.ListaFilmowVM
+
+@{
+    ViewBag.Title = "Lista Filmów";
+}
+
+<h2 class="float-left mr-3 mt-3">Lista Filmow</h2>
+<div class="btn-group float-right mt-3" role="group" aria-label="Basic example">
+    @Html.ActionLink("Dodaj Film", "DodajFilm", "Filmy", null, new { @class = "btn btn-primary" })
+    <button type="button" class="btn btn-primary c-pointer" id="pokazOpis" onclick="pokazOpis();">Pokaż opisy filmów</button>
+    <button type="button" class="btn btn-primary c-pointer" id="ukryjOpis" onclick="ukryjOpis();" style="display:none;">Ukryj opisy filmów</button>
+    <button type="button" class="btn btn-primary pl-0 pr-1"></button>
+</div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista[0].Tytul)
+            </th>
+            <th class="tytulOpisu" style="display:none;">
+                @Html.DisplayNameFor(model => model.Lista[0].Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista[0].Cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista[0].GodzinaSeansu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista[0].DlugoscSeansu)
+            </th>
+            <th style="min-width: 150px;"></th>
+        </tr>
+
+        @foreach (var item in Model.Lista)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tytul)
+                </td>
+                <td class="opis" style="display:none;">
+                    @Html.DisplayFor(modelItem => item.Opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cena)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GodzinaSeansu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DlugoscSeansu)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        @Html.ActionLink("Edytuj", "EdytujFilm", new { id = item.IdFilmu }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Usuń", "UsunFilm", new { id = item.IdFilmu }, new { @class = "btn btn-primary" })
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <script>
+        function pokazOpis() {
+            document.getElementsByClassName('tytulOpisu')[0].style.display = "block";
+            document.getElementById('pokazOpis').style.display = "none";
+            document.getElementById('ukryjOpis').style.display = "block";
+            for (let i = 0; i < document.getElementsByClassName("opis").length; i++)
+                document.getElementsByClassName('opis')[i].style.display = "block";
+        }
+        function ukryjOpis() {
+            document.getElementsByClassName('tytulOpisu')[0].style.display = "none";
+            document.getElementById('pokazOpis').style.display = "block";
+            document.getElementById('ukryjOpis').style.display = "none";
+            for (let i = 0; i < document.getElementsByClassName("opis").length; i++)
+                document.getElementsByClassName('opis')[i].style.display = "none";
+        }
+    </script>
