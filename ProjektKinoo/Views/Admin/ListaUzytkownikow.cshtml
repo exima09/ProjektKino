@@ -1,0 +1,51 @@
+﻿@model ProjektKinoo.ViewModels.User.ListaUzytkownikowVM
+
+@{
+    ViewBag.Title = "ListaUzytkownikow";
+}
+
+<h2>ListaUzytkownikow</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Admin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Lista) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Model.SprawdzAdmin(item)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "EdytujUzytkownika", new { id=item.UserId }) |
+            @Html.ActionLink("Wyświetl", "WyswietlUzytkownika", new { id=item.UserId }) |
+            @Html.ActionLink("Usuń", "Usun", new { id=item.UserId })
+        </td>
+    </tr>
+}
+
+</table>

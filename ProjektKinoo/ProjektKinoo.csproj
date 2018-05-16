@@ -180,7 +180,7 @@
       <DependentUpon>201805141620582_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Rezerwacje.cs" />
+    <Compile Include="ViewModels\Admin\NadajAdministratoraVM.cs" />
     <Compile Include="ViewModels\Filmy\DodajFilmVM.cs" />
     <Compile Include="ViewModels\Filmy\EdytujFilmVM.cs" />
     <Compile Include="ViewModels\Filmy\ListaFilmowVM.cs" />
@@ -196,6 +196,8 @@
     <Compile Include="BusinessLayer\UzytkownicyBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\User\EdytujUzytkownikaVM.cs" />
+    <Compile Include="ViewModels\User\ListaUzytkownikowVM.cs" />
+    <Compile Include="ViewModels\User\WyswietlVM.cs" />
     <Compile Include="ViewModels\User\ZmienHasloVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +307,10 @@
     <Content Include="Views\Home\BrakDostepu.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Filmy\Repertuar.cshtml" />
+    <Content Include="Views\Admin\EdytujUzytkownika.cshtml" />
+    <Content Include="Views\Admin\ListaUzytkownikow.cshtml" />
+    <Content Include="Views\Admin\WyswietlUzytkownika.cshtml" />
+    <Content Include="Views\Admin\ListaAdministratora.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ProjektKinoo.Models;
+
 
 namespace ProjektKinoo.ViewModels.User
 {
-    public class EdytujUzytkownikaVM
+    public class WyswietlVM
     {
-        public Uzytkownicy User { get; set; }
-        public string SprawdzAdmin(Uzytkownicy u)
+        public Models.Uzytkownicy User { get; set; }
+        public string SprawdzAdmin(Models.Uzytkownicy u)
         {
             if (u.Admin == 1)
             {

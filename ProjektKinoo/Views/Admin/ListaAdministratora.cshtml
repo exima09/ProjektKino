@@ -1,0 +1,45 @@
+﻿@model ProjektKinoo.ViewModels.Admin.NadajAdministratoraVM
+@{
+    ViewBag.Title = "Nadaj Administratora";
+}
+
+<h2>Nadaj Administratora</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lista[0].Admin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Lista) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Model.SprawdzAdmin(item)
+        </td>
+        <td>
+            @if (item.Admin == 0)
+            {
+                @Html.ActionLink("Nadaj Uprawnienia", "NadajAdministratora", new { id = item.UserId })
+            }
+            else
+            {
+                @Html.ActionLink("Odbierz Uprawnienia", "NadajAdministratora", new { id = item.UserId })
+            }
+        </td>
+    </tr>
+}
+
+</table>

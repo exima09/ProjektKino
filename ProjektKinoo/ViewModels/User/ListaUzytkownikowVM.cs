@@ -6,12 +6,12 @@ using ProjektKinoo.Models;
 
 namespace ProjektKinoo.ViewModels.User
 {
-    public class EdytujUzytkownikaVM
+    public class ListaUzytkownikowVM
     {
-        public Uzytkownicy User { get; set; }
+        public List<Uzytkownicy> Lista { get; set; }
         public string SprawdzAdmin(Uzytkownicy u)
         {
-            if (u.Admin == 1)
+            if(u.Admin==1)
             {
                 return "Administrator";
             }

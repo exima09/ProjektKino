@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using ProjektKinoo.Models;
 
-namespace ProjektKinoo.ViewModels.User
+namespace ProjektKinoo.ViewModels.Admin
 {
-    public class EdytujUzytkownikaVM
+    public class NadajAdministratoraVM
     {
-        public Uzytkownicy User { get; set; }
+        public List<Uzytkownicy> Lista { get; set; }
         public string SprawdzAdmin(Uzytkownicy u)
         {
+            if(u.UserId==1 && u.Admin==1) { return "Główny Administrator"; }
             if (u.Admin == 1)
             {
                 return "Administrator";

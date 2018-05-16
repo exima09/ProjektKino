@@ -31,6 +31,7 @@ namespace ProjektKinoo.Controllers
             DodajFilmVM DodajFilm = new DodajFilmVM();
             return View(DodajFilm);
         }
+        [Authorize]
         [HttpPost]
         public ActionResult DodajFilm(DodajFilmVM vm)
         {
@@ -73,6 +74,7 @@ namespace ProjektKinoo.Controllers
             };
             return View(vm);
         }
+        [Authorize]
         [HttpPost]
         public ActionResult EdytujFilm(EdytujFilmVM vm)
         {

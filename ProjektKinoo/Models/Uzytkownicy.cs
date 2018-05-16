@@ -23,6 +23,7 @@ namespace ProjektKinoo.Models
         [Required]
         [Display(Name = "Hasło")]
         public string PasswordHash { get; set; }
+        [Display(Name = "Uprawnienia")]
         public int Admin { get; set; }
     }   
 }

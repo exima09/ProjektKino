@@ -1,0 +1,50 @@
+﻿@model ProjektKinoo.ViewModels.User.WyswietlVM
+
+@{
+    ViewBag.Title = "Wyświetl Użytkownika";
+}
+
+<h2>WyswietlUzytkownika</h2>
+
+<div>
+    <h4>Uzytkownicy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Admin)
+        </dt>
+
+        <dd>
+            @Model.SprawdzAdmin(Model.User)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "EdytujUzytkownika", "Admin", new { id = Model.User.UserId },null) |
+    @Html.ActionLink("Wróć do listy", "Index","Admin",null, null)
+</p>

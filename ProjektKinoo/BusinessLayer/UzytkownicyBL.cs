@@ -5,6 +5,8 @@ using System.Web;
 using ProjektKinoo.Models;
 using ProjektKinoo.DAL;
 using System.Data.Entity.Migrations;
+using System.Web.Mvc;
+using System.Web.Mvc.Filters;
 
 namespace ProjektKinoo.BusinessLayer
 {
@@ -32,8 +34,18 @@ namespace ProjektKinoo.BusinessLayer
         public Uzytkownicy GetUserEmail(string em)
         {
             DB mDB = new DB();
-            Uzytkownicy user = mDB.UserDB.Single(model => model.Email == em);
-            return user;
+            ;
+            try
+            {
+                Uzytkownicy user = mDB.UserDB.Single(model => model.Email == em);
+                return user;
+            }
+            catch
+            {
+                Controllers.LogowanieController con = new Controllers.LogowanieController();
+                con.Logowanie();
+            }
+            return new Uzytkownicy();
         }
         public void EditUser(Uzytkownicy u)
         {
